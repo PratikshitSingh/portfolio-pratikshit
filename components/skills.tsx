@@ -11,13 +11,13 @@ const fadeInAnimationVariants = {
     opacity: 0,
     y: 100,
   },
-  animate: (index: number) => ({
+  animate: {
     opacity: 1,
     y: 0,
     transition: {
-      delay: index * 0.05,
+      delay: 0,
     },
-  }),
+  },
 };
 
 export default function Skills() {
@@ -61,7 +61,6 @@ export default function Skills() {
                   whileHover={{ scale: 1.15 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   viewport={{ once: true }}
-                  custom={skillIndex + categoryIndex * 20}
                 >
                   {skill}
                 </motion.li>

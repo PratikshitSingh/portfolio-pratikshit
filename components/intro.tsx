@@ -84,7 +84,7 @@ export default function Intro() {
           <BsArrowRight className="opacity-70 group-hover:tranlate-x-1 transition" />
         </Link>
         <a
-          href="https://drive.google.com/file/d/11X2QYqfdQFfBF_QEtoiaZXh-eAE5Fwlg/view?usp=sharing"
+          href="/pratikshit_resume.pdf"
           target="_blank"
           className="group flex items-center bg-white px-7 py-3 gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition borderBlack dark:bg-white/10"
         >
