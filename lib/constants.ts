@@ -20,7 +20,7 @@ export const SECTION_THRESHOLDS: Partial<Record<SectionName, number>> = {
   Home: 0.5,       // Intro section - small, visible quickly
   About: 0.5,      // Compact cards - easy to detect
   Education: 0.5,  // Timeline cards - manageable height
-  Experience: 0.5, // Timeline with 5 items - moderate-to-large
+  Experience: 0.15, // Timeline with 6 items - large section, needs low threshold
   Projects: 0.15,  // Large: ~2000px, 7 project cards with animations
   Skills: 0.75,    // Default: centered grid layout needs higher threshold
   Contact: 0.75,   // Default: form section at bottom
