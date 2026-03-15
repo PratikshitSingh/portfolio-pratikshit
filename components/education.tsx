@@ -9,7 +9,7 @@ import iit from "@/public/iit.png";
 import uofi from "@/public/uofi.png";
 
 export default function Education() {
-  const { ref } = useSectionInView("Education", 0.5);
+  const { ref } = useSectionInView("Education");
 
   return (
     <section ref={ref} id="education" className="scroll-mt-28 mb-28">
