@@ -49,21 +49,19 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Pratikshit,</span> a
-        forward-thinking <span className="font-bold">software engineer</span>{" "}
-        with a passion for solving challenging problems in collaborative
-        environments.
+        <span className="font-bold">I build systems that don't flinch under scale—</span>
+        <span className="font-bold">event-driven services, data pipelines, and GenAI apps that actually ship.</span>
         <br />
         <br />
-        Currently I'm developing robust and scalable{" "}
+        Currently focused on designing{" "}
         <span className="font-bold">
-            applications for solving customer problems.{" "}
-        </span>
-        <span className="italic">Experienced working in Adtech, Fintech and Transportation.</span>{" "} My past experiences at <span className="italic">Zeta, Illinois Center of Transportation, JP Morgan Chase</span> and current work has honed my skills in creating highly available, scalable, reliable, robust software solutions, with a special focus on combining cloud and AI technologies with full-stack development, with blend of Data Science and Machine Learning.
+          microservices that stay up, fast, and readable
+        </span>{" "}
+        with production GenAI patterns (RAG, agents, evaluation). I've spent time at{" "}
+        <span className="italic">Intuit, Zeta Global, Illinois Center of Transportation, and JP Morgan Chase</span> building systems where correctness, performance, and maintainability all matter.
         <br />
-        <br />I am driven by the challenge of innovating in the tech landscape,
-        and I am always eager to apply my expertise to new, groundbreaking
-        projects.
+        <br />
+        <span className="italic">Open to collaborating on:</span> RAG/Agent systems solving real workflows, data platforms (PySpark/EMR, event-driven architectures), and backend systems where scale meets observability.
       </motion.h1>
 
       <motion.div

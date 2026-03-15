@@ -1,6 +1,7 @@
 import React from "react";
 import { FaLaptopCode } from "react-icons/fa";
 import { BsBank } from "react-icons/bs";
+import { SiSpringboot } from "react-icons/si";
 import youtubeTrackerImg from "@/public/youtubeTracker.png";
 import aesrganImg from "@/public/aesrgan.png";
 import ictmanagerImg from "@/public/ictmanager.png";
@@ -41,6 +42,15 @@ export const links = [
 ] as const;
 
 export const experiencesData = [
+    {
+        title: "Intuit, Software Engineer - Privacy Engineering",
+        location: "Mountain View, CA",
+        description:
+            "Designing and building event-driven Spring Boot microservices for privacy compliance automation. Architecturing and leading the Intuit Compliance work for all Intuit products, partnered with LCPO.",
+        icon: React.createElement(SiSpringboot),
+        tags: ["SPRING BOOT", "MICROSERVICES", "KAFKA", "AWS", "EVENT-DRIVEN", "DISTRIBUTED SYSTEMS", "PRIVACY COMPLIANCE"],
+        date: "Present",
+    },
     {
         title: "Zeta Global, Software Engineer",
         location: "San Francisco, CA",
@@ -90,13 +100,28 @@ export const experiencesData = [
 
 export const projectsData = [
     {
+        title: "RAG Legislative Tracker",
+        description:
+            "Privacy law changes detection system using Retrieval-Augmented Generation to identify and summarize regulatory updates. Improved review speed by 60% through intelligent document chunking, vector similarity search, and LLM-powered synthesis. Integrated with multiple data sources and automated workflows.",
+        tags: ["LANGCHAIN", "RAG", "VECTOR DB", "PYTHON", "FASTAPI", "LLM", "EMBEDDINGS"],
+        projectUrl: "https://github.com/PratikshitSingh/rag-legislative-tracker",
+        imageUrl: aesrganImg,
+    },
+    {
+        title: "Spring Boot Microservices - Multi-Region Patterns",
+        description:
+            "Production-grade event-driven microservices architecture demonstrating multi-region deployment, service-to-service communication via Kafka, distributed transaction coordination, and resilience patterns (circuit breakers, rate limiting, throttling). Designed for high availability and operational excellence at scale.",
+        tags: ["SPRING BOOT", "KAFKA", "DISTRIBUTED SYSTEMS", "JAVA", "MULTI-REGION", "EVENT-DRIVEN"],
+        projectUrl: "https://github.com/PratikshitSingh/spring-microservices-patterns",
+        imageUrl: aesrganImg,
+    },
+    {
         title: "Youtube Playlist Tracker",
         description:
             "Kafka application for users to track their playlist added in the app, using Youtube API to fetch video statistics, Kafka producer-consumer model to track the video statistics, and sink to send notifications to users on Telegram.",
         tags: ["Kafka", "Confluent Cloud", "Heroku", "Youtube API", "Telegram API", "Python", "Flask", "ksqlDB"],
         projectUrl: "https://github.com/PratikshitSingh/youtube-playlist-tracker",
         imageUrl: youtubeTrackerImg,
-
     },
     {
         title: "Life Cycle/Cost Assessment Tool",
@@ -149,42 +174,75 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-    "Python", 
-    "C++",
-    "C",
-    "SQL",
-    "HTML",
-    "CSS",
-    "Bash",
-    "JavaScript",
-    "TypeScript",
-    "Django", 
+    // --- Backend & Microservices ---
+    "Spring Boot",
+    "Django",
     "Flask",
     "Kafka",
-    "React",
-    "Tailwind",
-    "PostgreSQL",
-    "SQLite",
-    "MongoDB",
-    "GraphQL",
-    "Apollo",
-    "Redux",
-    "Git",
+    "Redis",
+    "Nginx",
+    
+    // --- Data & ETL ---
+    "PySpark",
+    "EMR",
+    "Hadoop",
+    "Hive",
+    "SQL",
+    "Airflow",
+    
+    // --- Cloud & DevOps ---
     "AWS",
     "GCP",
-    "Heroku",
     "Docker",
+    "Kubernetes",
     "Jenkins",
-    "Kubernetes(K8S)",
     "Github Actions",
+    "ArgoCD",
     "Terraform",
-    "Mantine",
-    "Vercel",
+    
+    // --- GenAI & LLMs ---
+    "LangChain",
+    "LangGraph",
+    "RAG",
+    "Vector DBs",
+    "Embeddings",
+    
+    // --- ML/DL ---
+    "PyTorch",
+    "TensorFlow",
+    "Keras",
     "Scikit-Learn",
+    
+    // --- Frontend ---
+    "React",
+    "Redux",
+    "TypeScript",
+    "JavaScript",
+    "Tailwind",
+    "Next.js",
+    "HTML",
+    "CSS",
+    "Mantine",
+    
+    // --- Databases ---
+    "PostgreSQL",
+    "MongoDB",
+    "SQLite",
+    "GraphQL",
+    "Apollo",
+    
+    // --- Languages ---
+    "Python",
+    "Java",
+    "C++",
+    "C",
+    "Bash",
+    
+    // --- Tools & Utilities ---
+    "Git",
+    "Heroku",
+    "Vercel",
     "Pandas",
     "Numpy",
     "Matplotlib",
-    "Tensorflow",
-    "Keras",
-    "Pytorch",
 ] as const;
