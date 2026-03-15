@@ -100,22 +100,6 @@ export const experiencesData = [
 
 export const projectsData = [
     {
-        title: "RAG Legislative Tracker",
-        description:
-            "Privacy law changes detection system using Retrieval-Augmented Generation to identify and summarize regulatory updates. Improved review speed by 60% through intelligent document chunking, vector similarity search, and LLM-powered synthesis. Integrated with multiple data sources and automated workflows.",
-        tags: ["LANGCHAIN", "RAG", "VECTOR DB", "PYTHON", "FASTAPI", "LLM", "EMBEDDINGS"],
-        projectUrl: "https://github.com/PratikshitSingh/rag-legislative-tracker",
-        imageUrl: aesrganImg,
-    },
-    {
-        title: "Spring Boot Microservices - Multi-Region Patterns",
-        description:
-            "Production-grade event-driven microservices architecture demonstrating multi-region deployment, service-to-service communication via Kafka, distributed transaction coordination, and resilience patterns (circuit breakers, rate limiting, throttling). Designed for high availability and operational excellence at scale.",
-        tags: ["SPRING BOOT", "KAFKA", "DISTRIBUTED SYSTEMS", "JAVA", "MULTI-REGION", "EVENT-DRIVEN"],
-        projectUrl: "https://github.com/PratikshitSingh/spring-microservices-patterns",
-        imageUrl: aesrganImg,
-    },
-    {
         title: "Youtube Playlist Tracker",
         description:
             "Kafka application for users to track their playlist added in the app, using Youtube API to fetch video statistics, Kafka producer-consumer model to track the video statistics, and sink to send notifications to users on Telegram.",
