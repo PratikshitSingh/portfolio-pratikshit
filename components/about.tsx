@@ -21,34 +21,38 @@ export default function About() {
       <SectionHeading>About Me</SectionHeading>
       <p className="mb-3">
         <span className="font-bold">
-          I am open to new opportunities for full-time positions as a Full Stack 
-          Software Engineer/MLE/AI Engineer. Feel free to contact me if you have any! 
+          I am open to new opportunities for full-time positions as a Backend Engineer, 
+          Software Engineer, or AI Engineer. Feel free to reach out!
         </span>
       </p>
 
       <p className="mb-3">
-        I'm specialized in{" "}
+        My core expertise lies in{" "}
         <span className="font-bold">
-          full-stack development, cloud computing, and AI technologies
+          full-stack development, designing event-driven microservices, building scalable data pipelines, and shipping production GenAI systems.
         </span>
-        . I'm proficient in{" "}
+        {" "}I'm proficient in{" "}
         <span className="font-bold">
-          Java, Python, JavaScript, React, Next.js, SpringBoot, Django, Flask, Postgres,
-           MongoDB, AWS, Docker, Kubernetes, AI technologies and Kafka.
+          Spring Boot, Python, Kafka, PostgreSQL, AWS, Docker, Kubernetes, LangChain, RAG patterns, PyTorch, React, Next.js, and TypeScript.
         </span>
-        I'm eager to apply these skills in a dynamic software engineering
-        role.
       </p>
 
       <p className="mb-3">
-        My passion for programming lies in the thrill of solving complex
-        problems. There's nothing more satisfying than crafting the perfect
-        solution after a challenging puzzle. I'm constantly seeking to expand my
-        knowledge and master new technologies. I'm always experimenting with
-        innovative ways to automate the mundane aspects of daily life to create
-        enjoyable, efficient experiences.
+        I'm currently exploring <span className="font-bold">production GenAI patterns</span>—evaluating RAG approaches, building reliable agents, and making LLM systems measurable and safe. I love problems where clean architecture, operational excellence, and Hexagonal design patterns intersect.
+      </p>
+
+      <p className="mb-3">
+        <span className="font-bold italic">Open to Collaborate On:</span>
         <br />
-        When I'm not working you can find me lifting or eating.
+        • Retrieval-Augmented Generation (RAG) and Agent systems solving real workflows
+        <br />
+        • Data platforms (PySpark/EMR, streaming, event-driven architectures)
+        <br />
+        • Backend systems where performance, correctness, and maintainability all matter
+      </p>
+
+      <p className="mb-3">
+        When I'm not working, you can find me lifting or eating.
       </p>
     </motion.section>
   );

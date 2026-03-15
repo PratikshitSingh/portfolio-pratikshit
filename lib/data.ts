@@ -1,6 +1,7 @@
 import React from "react";
-import { FaLaptopCode } from "react-icons/fa";
+import { FaLaptopCode, FaServer, FaChartBar, FaCloud, FaBrain, FaCode, FaDatabase, FaWrench } from "react-icons/fa";
 import { BsBank } from "react-icons/bs";
+import { SiSpringboot } from "react-icons/si";
 import youtubeTrackerImg from "@/public/youtubeTracker.png";
 import aesrganImg from "@/public/aesrgan.png";
 import ictmanagerImg from "@/public/ictmanager.png";
@@ -41,6 +42,15 @@ export const links = [
 ] as const;
 
 export const experiencesData = [
+    {
+        title: "Intuit, Software Engineer - Privacy Engineering",
+        location: "Mountain View, CA",
+        description:
+            "Designing and building event-driven Spring Boot microservices for privacy compliance automation. Architecting and leading the Intuit Compliance work for all Intuit products, partnered with LCPO.",
+        icon: React.createElement(SiSpringboot),
+        tags: ["SPRING BOOT", "MICROSERVICES", "KAFKA", "AWS", "EVENT-DRIVEN", "DISTRIBUTED SYSTEMS", "PRIVACY COMPLIANCE"],
+        date: "Present",
+    },
     {
         title: "Zeta Global, Software Engineer",
         location: "San Francisco, CA",
@@ -96,7 +106,6 @@ export const projectsData = [
         tags: ["Kafka", "Confluent Cloud", "Heroku", "Youtube API", "Telegram API", "Python", "Flask", "ksqlDB"],
         projectUrl: "https://github.com/PratikshitSingh/youtube-playlist-tracker",
         imageUrl: youtubeTrackerImg,
-
     },
     {
         title: "Life Cycle/Cost Assessment Tool",
@@ -148,43 +157,56 @@ export const projectsData = [
     },
 ] as const;
 
-export const skillsData = [
-    "Python", 
-    "C++",
-    "C",
-    "SQL",
-    "HTML",
-    "CSS",
-    "Bash",
-    "JavaScript",
-    "TypeScript",
-    "Django", 
-    "Flask",
-    "Kafka",
-    "React",
-    "Tailwind",
-    "PostgreSQL",
-    "SQLite",
-    "MongoDB",
-    "GraphQL",
-    "Apollo",
-    "Redux",
-    "Git",
-    "AWS",
-    "GCP",
-    "Heroku",
-    "Docker",
-    "Jenkins",
-    "Kubernetes(K8S)",
-    "Github Actions",
-    "Terraform",
-    "Mantine",
-    "Vercel",
-    "Scikit-Learn",
-    "Pandas",
-    "Numpy",
-    "Matplotlib",
-    "Tensorflow",
-    "Keras",
-    "Pytorch",
+export type SkillCategory = {
+    category: string;
+    icon: React.ReactNode;
+    skills: readonly string[];
+};
+
+export const skillsData: readonly SkillCategory[] = [
+    {
+        category: "Backend & Microservices",
+        icon: React.createElement(FaServer),
+        skills: ["Spring Boot", "Django", "Flask", "Kafka", "Redis", "Nginx"],
+    },
+    {
+        category: "Data & ETL",
+        icon: React.createElement(FaChartBar),
+        skills: ["PySpark", "EMR", "Hadoop", "Hive", "SQL", "Airflow"],
+    },
+    {
+        category: "Cloud & DevOps",
+        icon: React.createElement(FaCloud),
+        skills: ["AWS", "GCP", "Docker", "Kubernetes", "Jenkins", "Github Actions", "ArgoCD", "Terraform"],
+    },
+    {
+        category: "GenAI & LLMs",
+        icon: React.createElement(FaBrain),
+        skills: ["LangChain", "LangGraph", "RAG", "Vector DBs", "Embeddings"],
+    },
+    {
+        category: "ML/DL",
+        icon: React.createElement(FaBrain),
+        skills: ["PyTorch", "TensorFlow", "Keras", "Scikit-Learn"],
+    },
+    {
+        category: "Frontend",
+        icon: React.createElement(FaCode),
+        skills: ["React", "Redux", "TypeScript", "JavaScript", "Tailwind", "Next.js", "HTML", "CSS", "Mantine"],
+    },
+    {
+        category: "Databases",
+        icon: React.createElement(FaDatabase),
+        skills: ["PostgreSQL", "MongoDB", "SQLite", "GraphQL", "Apollo"],
+    },
+    {
+        category: "Languages",
+        icon: React.createElement(FaCode),
+        skills: ["Python", "Java", "C++", "C", "Bash"],
+    },
+    {
+        category: "Tools & Utilities",
+        icon: React.createElement(FaWrench),
+        skills: ["Git", "Heroku", "Vercel", "Pandas", "Numpy", "Matplotlib"],
+    },
 ] as const;
