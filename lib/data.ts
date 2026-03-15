@@ -46,7 +46,7 @@ export const experiencesData = [
         title: "Intuit, Software Engineer - Privacy Engineering",
         location: "Mountain View, CA",
         description:
-            "Designing and building event-driven Spring Boot microservices for privacy compliance automation. Architecturing and leading the Intuit Compliance work for all Intuit products, partnered with LCPO.",
+            "Designing and building event-driven Spring Boot microservices for privacy compliance automation. Architecting and leading the Intuit Compliance work for all Intuit products, partnered with LCPO.",
         icon: React.createElement(SiSpringboot),
         tags: ["SPRING BOOT", "MICROSERVICES", "KAFKA", "AWS", "EVENT-DRIVEN", "DISTRIBUTED SYSTEMS", "PRIVACY COMPLIANCE"],
         date: "Present",
