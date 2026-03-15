@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLaptopCode } from "react-icons/fa";
+import { FaLaptopCode, FaServer, FaChartBar, FaCloud, FaBrain, FaCode, FaDatabase, FaWrench } from "react-icons/fa";
 import { BsBank } from "react-icons/bs";
 import { SiSpringboot } from "react-icons/si";
 import youtubeTrackerImg from "@/public/youtubeTracker.png";
@@ -157,76 +157,56 @@ export const projectsData = [
     },
 ] as const;
 
-export const skillsData = [
-    // --- Backend & Microservices ---
-    "Spring Boot",
-    "Django",
-    "Flask",
-    "Kafka",
-    "Redis",
-    "Nginx",
-    
-    // --- Data & ETL ---
-    "PySpark",
-    "EMR",
-    "Hadoop",
-    "Hive",
-    "SQL",
-    "Airflow",
-    
-    // --- Cloud & DevOps ---
-    "AWS",
-    "GCP",
-    "Docker",
-    "Kubernetes",
-    "Jenkins",
-    "Github Actions",
-    "ArgoCD",
-    "Terraform",
-    
-    // --- GenAI & LLMs ---
-    "LangChain",
-    "LangGraph",
-    "RAG",
-    "Vector DBs",
-    "Embeddings",
-    
-    // --- ML/DL ---
-    "PyTorch",
-    "TensorFlow",
-    "Keras",
-    "Scikit-Learn",
-    
-    // --- Frontend ---
-    "React",
-    "Redux",
-    "TypeScript",
-    "JavaScript",
-    "Tailwind",
-    "Next.js",
-    "HTML",
-    "CSS",
-    "Mantine",
-    
-    // --- Databases ---
-    "PostgreSQL",
-    "MongoDB",
-    "SQLite",
-    "GraphQL",
-    "Apollo",
-    
-    // --- Languages ---
-    "Python",
-    "Java",
-    "C++",
-    "C",
-    "Bash",
-    
-    // --- Tools & Utilities ---
-    "Git",
-    "Heroku",
-    "Vercel",
-    "Pandas",
-    "Numpy",
-    "Matplotlib",
+export type SkillCategory = {
+    category: string;
+    icon: React.ReactNode;
+    skills: readonly string[];
+};
+
+export const skillsData: readonly SkillCategory[] = [
+    {
+        category: "Backend & Microservices",
+        icon: React.createElement(FaServer),
+        skills: ["Spring Boot", "Django", "Flask", "Kafka", "Redis", "Nginx"],
+    },
+    {
+        category: "Data & ETL",
+        icon: React.createElement(FaChartBar),
+        skills: ["PySpark", "EMR", "Hadoop", "Hive", "SQL", "Airflow"],
+    },
+    {
+        category: "Cloud & DevOps",
+        icon: React.createElement(FaCloud),
+        skills: ["AWS", "GCP", "Docker", "Kubernetes", "Jenkins", "Github Actions", "ArgoCD", "Terraform"],
+    },
+    {
+        category: "GenAI & LLMs",
+        icon: React.createElement(FaBrain),
+        skills: ["LangChain", "LangGraph", "RAG", "Vector DBs", "Embeddings"],
+    },
+    {
+        category: "ML/DL",
+        icon: React.createElement(FaBrain),
+        skills: ["PyTorch", "TensorFlow", "Keras", "Scikit-Learn"],
+    },
+    {
+        category: "Frontend",
+        icon: React.createElement(FaCode),
+        skills: ["React", "Redux", "TypeScript", "JavaScript", "Tailwind", "Next.js", "HTML", "CSS", "Mantine"],
+    },
+    {
+        category: "Databases",
+        icon: React.createElement(FaDatabase),
+        skills: ["PostgreSQL", "MongoDB", "SQLite", "GraphQL", "Apollo"],
+    },
+    {
+        category: "Languages",
+        icon: React.createElement(FaCode),
+        skills: ["Python", "Java", "C++", "C", "Bash"],
+    },
+    {
+        category: "Tools & Utilities",
+        icon: React.createElement(FaWrench),
+        skills: ["Git", "Heroku", "Vercel", "Pandas", "Numpy", "Matplotlib"],
+    },
 ] as const;
