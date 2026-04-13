@@ -68,7 +68,7 @@ export const experiencesData = [
         date: "Dec 2022 - May 2024",
     },
     {
-        title: "JP Morgna Chase - Software Engineer II",
+        title: "JP Morgan Chase - Software Engineer II",
         location: "Bengaluru, India",
         description:
             "Developed optimization system using Linear Regression & XGB prediction models for risk computation costs, reducing AWS EC2 usage by 84% for the team.",
@@ -77,7 +77,7 @@ export const experiencesData = [
         date: "Jan 2022 - Aug 2022",
     },
     {
-        title: "JP Morgna Chase - Software Engineer I",
+        title: "JP Morgan Chase - Software Engineer I",
         location: "Bengaluru, India",
         description:
             "Built user-facing dashboards to display Derivative Trade market risk and P&L reports. Wrote the data massaging and aggregation services triggered by Market Markers.",
@@ -86,7 +86,7 @@ export const experiencesData = [
         date: "Aug 2020 - Jan 2022",
     },
     {
-        title: "JP Morgna Chase - Software Engineering Intern",
+        title: "JP Morgan Chase - Software Engineering Intern",
         location: "Bengaluru, India",
         description:
             "Developed an automatic dependency upgradation for NodeJS trading app.",
