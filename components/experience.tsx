@@ -51,16 +51,17 @@ export default function Experience() {
                       theme === "light"
                         ? "white"
                         : "rgba(255, 255, 255, 0.15)",
-                    borderRadius: "8px",
-                    padding: "8px",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    padding: 0,
                   }}
                 >
                   <Image
                     src={item.logoPath}
                     alt={`${item.title} logo`}
-                    width={64}
-                    height={64}
-                    style={{ width: "auto", height: "auto" }}
+                    width={32}
+                    height={32}
+                    style={{ maxWidth: "32px", maxHeight: "32px", width: "auto", height: "auto", objectFit: "contain" }}
                     priority={index === 0}
                   />
                 </div>
