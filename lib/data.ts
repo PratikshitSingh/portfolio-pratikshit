@@ -62,7 +62,7 @@ export const experiencesData = [
         title: "Illinois Center of Transportation, Lead Software Developer",
         location: "Rantoul, IL",
         description:
-            "Designed and implemented multiple containerized(AWS CaaS) web applications for Pavement Life Cycle Assesment with RDBMS, ReactJS, and Django Rest Framework.",
+            "Designed and implemented multiple containerized(AWS CaaS) web applications for Pavement Life Cycle Assessment with RDBMS, ReactJS, and Django Rest Framework.",
         logoPath: "/logos/ict.svg",
         tags: ["DJANGO", "REACT", "MANTINE", "POSTGRES", "OPENSOURCE LIBRARIES", "AWS LIGHTSAIL", "DOCKER", "GITHUB ACTIONS"],
         date: "Dec 2022 - May 2024",
