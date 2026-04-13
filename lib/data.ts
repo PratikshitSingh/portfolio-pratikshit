@@ -1,7 +1,5 @@
 import React from "react";
-import { FaLaptopCode, FaServer, FaChartBar, FaCloud, FaBrain, FaCode, FaDatabase, FaWrench } from "react-icons/fa";
-import { BsBank } from "react-icons/bs";
-import { SiSpringboot } from "react-icons/si";
+import { FaServer, FaChartBar, FaCloud, FaBrain, FaCode, FaDatabase, FaWrench } from "react-icons/fa";
 import youtubeTrackerImg from "@/public/youtubeTracker.png";
 import aesrganImg from "@/public/aesrgan.png";
 import ictmanagerImg from "@/public/ictmanager.png";
@@ -47,7 +45,7 @@ export const experiencesData = [
         location: "Mountain View, CA",
         description:
             "Designing and building event-driven Spring Boot microservices for privacy compliance automation. Architecting and leading the Intuit Compliance work for all Intuit products, partnered with LCPO.",
-        icon: React.createElement(SiSpringboot),
+        logoPath: "/logos/Intuit.svg",
         tags: ["SPRING BOOT", "MICROSERVICES", "KAFKA", "AWS", "EVENT-DRIVEN", "DISTRIBUTED SYSTEMS", "PRIVACY COMPLIANCE"],
         date: "Present",
     },
@@ -56,7 +54,7 @@ export const experiencesData = [
         location: "San Francisco, CA",
         description:
             "Building analytical reporting tools for clients in Adtech industry and developing attributions ETLs for MTA campaigns.",
-        icon: React.createElement(FaLaptopCode),
+        logoPath: "/logos/zeta.svg",
         tags: ["BIG DATA", "NOSQL", "SQL", "DISTRIBUTED SYSTEMS", "ETL", "REST", "AWS", "DOCKER"],
         date: "June 2024 - Sep 2024",
     },
@@ -64,35 +62,35 @@ export const experiencesData = [
         title: "Illinois Center of Transportation, Lead Software Developer",
         location: "Rantoul, IL",
         description:
-            "Designed and implemented multiple containerized(AWS CaaS) web applications for Pavement Life Cycle Assesment with RDBMS, ReactJS, and Django Rest Framework.",
-        icon: React.createElement(FaLaptopCode),
+            "Designed and implemented multiple containerized(AWS CaaS) web applications for Pavement Life Cycle Assessment with RDBMS, ReactJS, and Django Rest Framework.",
+        logoPath: "/logos/ict.svg",
         tags: ["DJANGO", "REACT", "MANTINE", "POSTGRES", "OPENSOURCE LIBRARIES", "AWS LIGHTSAIL", "DOCKER", "GITHUB ACTIONS"],
         date: "Dec 2022 - May 2024",
     },
     {
-        title: "JP Morgna Chase - Software Engineer II",
+        title: "JP Morgan Chase - Software Engineer II",
         location: "Bengaluru, India",
         description:
             "Developed optimization system using Linear Regression & XGB prediction models for risk computation costs, reducing AWS EC2 usage by 84% for the team.",
-        icon: React.createElement(BsBank),
+        logoPath: "/logos/jpmc.svg",
         tags: ["SKLEARN", "LINEAR REGRESSION", "XG-BOOST", "ETL DATA PIPELINE", "AWS EC2", "POSTGRES", "KUBERNETES (K8S)"],
         date: "Jan 2022 - Aug 2022",
     },
     {
-        title: "JP Morgna Chase - Software Engineer I",
+        title: "JP Morgan Chase - Software Engineer I",
         location: "Bengaluru, India",
         description:
             "Built user-facing dashboards to display Derivative Trade market risk and P&L reports. Wrote the data massaging and aggregation services triggered by Market Markers.",
-        icon: React.createElement(BsBank),
+        logoPath: "/logos/jpmc.svg",
         tags: ["TORNADO", "REACT", "POSTGRES", "SQL", "AWS EC2", "KUBERNETES (K8S)"],
         date: "Aug 2020 - Jan 2022",
     },
     {
-        title: "JP Morgna Chase - Software Engineering Intern",
+        title: "JP Morgan Chase - Software Engineering Intern",
         location: "Bengaluru, India",
         description:
             "Developed an automatic dependency upgradation for NodeJS trading app.",
-        icon: React.createElement(BsBank),
+        logoPath: "/logos/jpmc.svg",
         tags: ["NODEJS", "JENKINS", "GROOVY"],
         date: "May 2019 - Jul 2019",
     },

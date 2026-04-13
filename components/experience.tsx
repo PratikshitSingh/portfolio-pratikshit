@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import SectionHeading from "./section-heading";
 
 import {
@@ -38,11 +39,42 @@ export default function Experience() {
                     : "0.4rem solid rgba(255, 255, 255, 0.5)",
               }}
               date={item.date}
-              icon={item.icon}
+              icon={
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background:
+                      theme === "light"
+                        ? "white"
+                        : "rgba(255, 255, 255, 0.15)",
+                    borderRadius: "50%",
+                    overflow: "hidden",
+                    padding: 0,
+                  }}
+                >
+                  <Image
+                    src={item.logoPath}
+                    alt={`${item.title} logo`}
+                    width={32}
+                    height={32}
+                    style={{ maxWidth: "32px", maxHeight: "32px", width: "auto", height: "auto", objectFit: "contain" }}
+                    priority={index === 0}
+                  />
+                </div>
+              }
               iconStyle={{
                 background:
                   theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
                 fontSize: "1.5rem",
+                width: "3.5rem",
+                height: "3.5rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
               <h3 className="font-bold capitalize">{item.title}</h3>
