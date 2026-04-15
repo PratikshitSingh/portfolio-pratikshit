@@ -119,15 +119,16 @@ export default function Project({
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onMouseEnter={handleMouseEnter}
-        onClick={() =>
-          onOpenModal({
+        onClick={() => {
+          const project = {
             title,
             description,
             tags,
             projectUrl,
             imageUrl,
-          })
-        }
+          } as const as typeof projectsData[number];
+          onOpenModal(project);
+        }}
         style={{
           x: isReducedMotion ? 0 : parallaxX,
           y: isReducedMotion ? 0 : parallaxY,
