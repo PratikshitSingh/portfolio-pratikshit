@@ -13,3 +13,27 @@ html.dark {
 .borderBlack {
     @apply border border-black/10;
 }
+
+/* Glassmorphism utilities */
+.glassmorphic {
+    @apply backdrop-blur-md bg-white/10 border border-white/20 rounded-lg;
+}
+
+.glassmorphic-dark {
+    @apply backdrop-blur-xl bg-black/20 border border-white/10 rounded-lg;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

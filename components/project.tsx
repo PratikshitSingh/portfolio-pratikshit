@@ -1,11 +1,21 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
+import Blob from "./blob";
 
-type ProjectProps = (typeof projectsData)[number];
+type ProjectProps = (typeof projectsData)[number] & {
+  index: number;
+  onOpenModal: (project: typeof projectsData[number]) => void;
+};
 
 export default function Project({
   title,
@@ -13,77 +23,208 @@ export default function Project({
   tags,
   projectUrl,
   imageUrl,
+  index,
+  onOpenModal,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
+
+  // Detect reduced motion preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setIsReducedMotion(mediaQuery.matches);
+  }, []);
+
+  // Scroll-based float effect with staggered offset per project
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["0 1", "1.33 1"],
+    offset: ["start end", "end start"],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
+  const floatAmount = 60 - index * 15; // Staggered float depth
+  const floatY = useTransform(scrollYProgress, [0, 1], [floatAmount, -floatAmount]);
+
+  // Fade in on scroll entrance
+  const cardOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+  const cardScale = useTransform(scrollYProgress, [0, 0.3], [0.8, 1]);
+
+  // Cursor tracking parallax
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const parallaxX = useSpring(useTransform(mouseX, [0, 1], [-12, 12]), {
+    damping: 20,
+    stiffness: 300,
+  });
+  const parallaxY = useSpring(useTransform(mouseY, [0, 1], [-12, 12]), {
+    damping: 20,
+    stiffness: 300,
+  });
+
+  // Blur intensity based on hover
+  const blurAmount = useMotionValue(11);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isReducedMotion || !cardRef.current) return;
+
+    const rect = cardRef.current.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const offsetY = e.clientY - rect.top;
+
+    mouseX.set(offsetX / rect.width);
+    mouseY.set(offsetY / rect.height);
+  };
+
+  const handleMouseLeave = () => {
+    if (!isReducedMotion) {
+      mouseX.set(0.5);
+      mouseY.set(0.5);
+      blurAmount.set(11);
+    }
+    setIsHovered(false);
+  };
+
+  const handleMouseEnter = () => {
+    blurAmount.set(15);
+    setIsHovered(true);
+  };
+
+  // Generate unique blob color based on project index
+  const blobColors = [
+    "rgba(139, 92, 246, 0.4)", // Purple
+    "rgba(59, 130, 246, 0.4)", // Blue
+    "rgba(16, 185, 129, 0.4)", // Teal
+    "rgba(168, 85, 247, 0.4)", // Violet
+    "rgba(236, 72, 153, 0.4)", // Pink
+    "rgba(249, 115, 22, 0.4)", // Orange
+    "rgba(34, 197, 94, 0.4)", // Green
+  ];
+
+  const blobColor = blobColors[index % blobColors.length];
 
   return (
     <motion.div
       ref={ref}
       style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
+        y: floatY,
+        opacity: cardOpacity,
+        scale: cardScale,
       }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+      className="mb-8 sm:mb-16 last:mb-0 cursor-pointer"
     >
-      <section className="bg-gray-100 max-w[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] mb-3 sm:mb-8 last:mb-0 hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-          <h3 className="text-2xl fonr-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          <a
-            href={projectUrl}
-            target="_blank"
-            className="mt-auto text-blue-500 hover:underline"
+      <motion.div
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        onMouseEnter={handleMouseEnter}
+        onClick={() =>
+          onOpenModal({
+            title,
+            description,
+            tags,
+            projectUrl,
+            imageUrl,
+          })
+        }
+        style={{
+          x: isReducedMotion ? 0 : parallaxX,
+          y: isReducedMotion ? 0 : parallaxY,
+        }}
+        className="relative group h-full"
+        whileHover={{ scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      >
+        {/* Glassmorphic card background */}
+        <motion.div
+          className="absolute inset-0 rounded-lg overflow-hidden"
+          style={{
+            backdropFilter: "blur(11px)",
+            background:
+              "rgba(255, 255, 255, 0.1) linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 100%)",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
+            boxShadow: isHovered
+              ? "0 20px 60px rgba(0, 0, 0, 0.3)"
+              : "0 8px 32px rgba(0, 0, 0, 0.1)",
+          }}
+          animate={{
+            boxShadow: isHovered
+              ? "0 25px 70px rgba(0, 0, 0, 0.35)"
+              : "0 8px 32px rgba(0, 0, 0, 0.1)",
+          }}
+          transition={{ duration: 0.3 }}
+        />
+
+        {/* Blob background */}
+        <div className="absolute inset-0 rounded-lg overflow-hidden opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+          <Blob
+            animationDuration={isHovered ? 4 : 8}
+            delay={index * 0.1}
+            color={blobColor}
+            opacity={0.4}
+          />
+        </div>
+
+        {/* Content container */}
+        <div className="relative z-10 p-6 sm:p-8 h-full flex flex-col justify-between">
+          {/* Project image - hidden in 2-column layout */}
+
+          {/* Text content */}
+          <motion.div
+            animate={{
+              opacity: isHovered ? 1 : 0.95,
+            }}
+            transition={{ duration: 0.2 }}
           >
-            View Project
-          </a>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
+              {title}
+            </h3>
+            <p className="mt-2 sm:mt-3 leading-relaxed text-gray-700 dark:text-white/80 text-sm">
+              {description}
+            </p>
+          </motion.div>
+
+          {/* Tags */}
+          <motion.ul
+            className="flex flex-wrap gap-2 mt-4 sm:mt-6"
+            animate={{
+              opacity: isHovered ? 1 : 0.8,
+            }}
+            transition={{ duration: 0.2 }}
+          >
+            {tags.map((tag, i) => (
               <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wide text-white rounded-full dark:text-white/70"
-                key={index}
+                key={i}
+                className="bg-black/30 backdrop-blur-md px-3 py-1 text-[0.65rem] sm:text-[0.7rem] uppercase tracking-wider text-white/90 rounded-full border border-white/20 hover:bg-black/50 transition"
               >
                 {tag}
               </li>
             ))}
-          </ul>
-        </div>
-        <div className="flex">
-          <Image
-            className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl 
-          
-          group-even:right-[initial]
-          group-even:-left-40
-          group-hover:-translate-x-3
-          group-hover:-translate-y-3
-          group-hover:-rotate-2
+          </motion.ul>
 
-          group-even:group-hover:translate-x-3
-          group-even:group-hover:translate-y-3
-          group-even:group-hover:rotate-2
-
-          group-hover:scale-105
-          transition"
-            src={imageUrl}
-            alt={title}
-            quality={95}
-          />
+          {/* Links */}
+          <motion.div
+            className="mt-auto pt-4 flex gap-3"
+            animate={{
+              opacity: isHovered ? 1 : 0.8,
+            }}
+            transition={{ duration: 0.2 }}
+          >
+            <a
+              href={projectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 text-sm underline"
+              onClick={(e) => e.stopPropagation()}
+            >
+              View Project
+            </a>
+            <span className="text-white/30">•</span>
+            <span className="text-white/60 text-sm">Click card to expand</span>
+          </motion.div>
         </div>
-      </section>
+      </motion.div>
     </motion.div>
   );
 }
-
-// The below function format also works
-// const Project = ({ title, description, tags, imageUrl }) => {
-//   return(
-//   <div>{title}</div>
-//   );
-// };
