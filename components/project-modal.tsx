@@ -115,14 +115,20 @@ export default function ProjectModal({
                     </motion.h2>
 
                     {/* Description */}
-                    <motion.p
+                    <motion.ul
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.15 }}
-                      className="text-base sm:text-lg text-white/80 leading-relaxed mb-6"
+                      className="text-base sm:text-lg text-white/80 leading-relaxed mb-6 list-disc list-inside"
                     >
-                      {project.description}
-                    </motion.p>
+                      {Array.isArray(project.description) ? (
+                        project.description.map((desc, idx) => (
+                          <li key={idx}>{desc}</li>
+                        ))
+                      ) : (
+                        <li>{project.description}</li>
+                      )}
+                    </motion.ul>
 
                     {/* Tags */}
                     <motion.div

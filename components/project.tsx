@@ -181,9 +181,15 @@ export default function Project({
             <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
               {title}
             </h3>
-            <p className="mt-2 sm:mt-3 leading-relaxed text-gray-700 dark:text-white/80 text-sm">
-              {description}
-            </p>
+            <ul className="mt-2 sm:mt-3 leading-relaxed text-gray-700 dark:text-white/80 text-sm list-disc list-inside">
+              {Array.isArray(description) ? (
+                description.map((desc, idx) => (
+                  <li key={idx}>{desc}</li>
+                ))
+              ) : (
+                <li>{description}</li>
+              )}
+            </ul>
           </motion.div>
 
           {/* Tags */}

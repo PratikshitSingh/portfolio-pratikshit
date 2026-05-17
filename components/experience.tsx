@@ -79,9 +79,15 @@ export default function Experience() {
             >
               <h3 className="font-bold capitalize">{item.title}</h3>
               <p className="font-normal !mt-0">{item.location}</p>
-              <p className="!mt-1 !font-normal !text-sm text-gray-700 dark:text-white/75">
-                {item.description}
-              </p>
+              <ul className="!mt-1 !font-normal !text-sm text-gray-700 dark:text-white/75 list-disc list-inside">
+                {Array.isArray(item.description) ? (
+                  item.description.map((desc, idx) => (
+                    <li key={idx}>{desc}</li>
+                  ))
+                ) : (
+                  <li>{item.description}</li>
+                )}
+              </ul>
               <ul className="!mt-4 flex flex-wrap gap-2 sm:mt-auto">
                 {item.tags.map((tag, index) => (
                   <li
