@@ -33,12 +33,12 @@ export default function About() {
         </span>
         {" "}I'm proficient in{" "}
         <span className="font-bold">
-          Spring Boot, Python, Kafka, PostgreSQL, AWS, Docker, Kubernetes, LangChain, RAG patterns, PyTorch, React, Next.js, and TypeScript.
+          Spring Boot, Python, Kafka, PySpark, PostgreSQL, AWS, Docker, Kubernetes, LangGraph, MCP, RAG patterns, PyTorch, React, Next.js, and TypeScript.
         </span>
       </p>
 
       <p className="mb-3">
-        I'm currently exploring <span className="font-bold">production GenAI patterns</span>—evaluating RAG approaches, building reliable agents, and making LLM systems measurable and safe. I love problems where clean architecture, operational excellence, and Hexagonal design patterns intersect.
+        I'm currently shipping <span className="font-bold">production agentic systems</span>—LangGraph multi-agent orchestration, Claude plugins (skills, MCP servers, hooks), and LLM-as-judge evals with Langfuse tracing that keep them measurable and safe. I love problems where clean architecture, operational excellence, and Hexagonal design patterns intersect.
       </p>
 
       <p className="mb-3">

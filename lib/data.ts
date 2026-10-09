@@ -44,14 +44,14 @@ export const experiencesData = [
         title: "Intuit, Software Engineer - Privacy Engineering",
         location: "Mountain View, CA",
         description: [
-            "Designed and built event-driven microservices architecture for privacy compliance automation, serving CCPA, GDPR, and Global Privacy Control requirements across all Intuit products",
-            "Architected and led AI-powered Complaint Management Platform for all Intuit product support operations",
-            "Improved complaint recall from 1% manual processing to 100% automated, reducing processing time from monthly reviews to daily reports",
-            "Creating Langgraph agents for Privacy automations & code assist plugins for enabling teams across Intuit to embed Privacy principles in their development lifecycle",
+            "Building a LangGraph multi-agent Legal Intelligence Platform with Langfuse tracing",
+            "Built Claude plugins (skills, MCP, hooks) that cut privacy reviews from 14 days to 1 and deflect 50% of queries",
+            "Led the AI Complaint Management Platform: 100GB/day PySpark pipelines with LLM + RAG regulatory checks",
+            "Built multi-region Spring Boot microservices at 99.99% availability",
         ],
         logoPath: "/logos/Intuit.svg",
-        tags: ["SPRING BOOT", "MICROSERVICES", "KAFKA", "AWS", "EVENT-DRIVEN", "DISTRIBUTED SYSTEMS", "PRIVACY COMPLIANCE"],
-        date: "Present",
+        tags: ["LANGGRAPH", "MCP", "RAG", "LLM EVALS", "PYSPARK", "SPRING BOOT", "KAFKA"],
+        date: "Sep 2024 - Present",
     },
     {
         title: "Zeta Global, Software Engineer",
@@ -197,27 +197,27 @@ export const skillsData: readonly SkillCategory[] = [
     {
         category: "Backend & Microservices",
         icon: React.createElement(FaServer),
-        skills: ["Spring Boot", "Django", "Flask", "Kafka", "Redis", "Nginx"],
+        skills: ["Spring Boot", "Spring WebFlux", "Resilience4j", "Spring Batch", "Django", "Flask", "FastAPI", "Kafka", "Redis", "Nginx"],
     },
     {
         category: "Data & ETL",
         icon: React.createElement(FaChartBar),
-        skills: ["PySpark", "EMR", "Hadoop", "Hive", "SQL", "Airflow"],
+        skills: ["PySpark", "EMR", "Delta Lake", "Parquet", "Hive", "Glue", "Athena", "Hadoop", "SQL", "Airflow"],
     },
     {
         category: "Cloud & DevOps",
         icon: React.createElement(FaCloud),
-        skills: ["AWS", "GCP", "Docker", "Kubernetes", "Jenkins", "Github Actions", "ArgoCD", "Terraform"],
+        skills: ["AWS", "GCP", "Docker", "Kubernetes", "Jenkins", "Github Actions", "ArgoCD", "Terraform", "OpenTelemetry", "Splunk"],
     },
     {
         category: "GenAI & LLMs",
         icon: React.createElement(FaBrain),
-        skills: ["LangChain", "LangGraph", "RAG", "Vector DBs", "Embeddings"],
+        skills: ["LangGraph", "LangChain", "Multi-Agent Systems", "MCP", "Claude Code Plugins", "RAG", "GraphRAG", "Vector DBs", "Embeddings", "LLM Evaluation", "Langfuse"],
     },
     {
         category: "ML/DL",
         icon: React.createElement(FaBrain),
-        skills: ["PyTorch", "TensorFlow", "Keras", "Scikit-Learn"],
+        skills: ["PyTorch", "TensorFlow", "Keras", "Scikit-Learn", "sentence-transformers", "UMAP", "HDBSCAN", "Kubeflow"],
     },
     {
         category: "Frontend",
@@ -227,12 +227,12 @@ export const skillsData: readonly SkillCategory[] = [
     {
         category: "Databases",
         icon: React.createElement(FaDatabase),
-        skills: ["PostgreSQL", "MongoDB", "SQLite", "GraphQL", "Apollo"],
+        skills: ["PostgreSQL", "MySQL", "DynamoDB", "Snowflake", "MongoDB", "Redis", "SQLite", "GraphQL", "Apollo"],
     },
     {
         category: "Languages",
         icon: React.createElement(FaCode),
-        skills: ["Python", "Java", "C++", "C", "Bash"],
+        skills: ["Python", "Java", "TypeScript", "SQL", "C++", "C", "Bash"],
     },
     {
         category: "Tools & Utilities",
