@@ -53,11 +53,11 @@ export default function Intro() {
         <span className="font-bold">event-driven services, data pipelines, and GenAI apps that actually ship.</span>
         <br />
         <br />
-        Currently focused on designing{" "}
+        Currently building{" "}
         <span className="font-bold">
-          microservices that stay up, fast, and readable
+          LangGraph multi-agent systems, Claude plugins and MCP servers
         </span>{" "}
-        with production GenAI patterns (RAG, agents, evaluation). I've spent time at{" "}
+        at Intuit, on top of microservices that stay up, fast, and readable, with evaluation and tracing baked in. I've spent time at{" "}
         <span className="italic">Intuit, Zeta Global, Illinois Center of Transportation, and JP Morgan Chase</span> building systems where correctness, performance, and maintainability all matter.
         <br />
         <br />

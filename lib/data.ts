@@ -44,14 +44,17 @@ export const experiencesData = [
         title: "Intuit, Software Engineer - Privacy Engineering",
         location: "Mountain View, CA",
         description: [
-            "Designed and built event-driven microservices architecture for privacy compliance automation, serving CCPA, GDPR, and Global Privacy Control requirements across all Intuit products",
-            "Architected and led AI-powered Complaint Management Platform for all Intuit product support operations",
-            "Improved complaint recall from 1% manual processing to 100% automated, reducing processing time from monthly reviews to daily reports",
-            "Creating Langgraph agents for Privacy automations & code assist plugins for enabling teams across Intuit to embed Privacy principles in their development lifecycle",
+            "Building the Intuit Legal Intelligence Platform: a LangGraph-orchestrated multi-agent system with a knowledge layer, automated request triage and routing, human-in-the-loop resume via Redis checkpointing, and end-to-end traceability of every agent decision via Langfuse, persisted to the data lake",
+            "Ideated and built Claude plugins (Skills, MCP servers, Agents, Hooks) for Privacy Legal and Intuit-wide product teams, cutting privacy review turnaround from 14 days to 1 day and deflecting 50% of inbound privacy queries via self-service triage",
+            "Rolled out AI dev standards (CLAUDE.md, AGENT.md, CodeRabbit) across ~20 repos and built an LLM-as-judge eval harness for skills (47 tests across 6 dimensions)",
+            "Spearheaded the AI-powered Complaint Management Platform: PySpark/EMR pipelines over 100GBs/day of transcripts with LLMs + RAG for insights and regulatory checks (UDAAP, TILA, FCRA, RegE); moved complaint recall from ~1% manual sampling to 100% automated and cut daily compute from 7h to 2h",
+            "Built ground-truth evals over golden datasets across 12 regulatory-model iterations, with human-in-the-loop sampling, false-positive review and drift monitoring; led model migrations and comparisons across GPT and Claude families",
+            "Implemented a RAG-powered Legislative Bill Tracker for upcoming privacy-law changes, accelerating legal compliance review by 60%",
+            "Designed event-driven, Hexagonal Spring Boot 3 / Java 21 microservices for privacy compliance (CCPA, GDPR, GPC) with 99.99% availability via multi-region active-active setup, Kafka intake, Resilience4j rate limiting, and distributed leases for single-writer batch runs",
         ],
         logoPath: "/logos/Intuit.svg",
-        tags: ["SPRING BOOT", "MICROSERVICES", "KAFKA", "AWS", "EVENT-DRIVEN", "DISTRIBUTED SYSTEMS", "PRIVACY COMPLIANCE"],
-        date: "Present",
+        tags: ["LANGGRAPH", "MULTI-AGENT", "MCP", "CLAUDE CODE PLUGINS", "RAG", "LLM EVALUATION", "LANGFUSE", "PYSPARK", "AWS EMR", "DELTA LAKE", "SPRING BOOT", "KAFKA", "AWS"],
+        date: "Sep 2024 - Present",
     },
     {
         title: "Zeta Global, Software Engineer",
@@ -197,27 +200,27 @@ export const skillsData: readonly SkillCategory[] = [
     {
         category: "Backend & Microservices",
         icon: React.createElement(FaServer),
-        skills: ["Spring Boot", "Django", "Flask", "Kafka", "Redis", "Nginx"],
+        skills: ["Spring Boot", "Spring WebFlux", "Resilience4j", "Spring Batch", "Django", "Flask", "FastAPI", "Kafka", "Redis", "Nginx"],
     },
     {
         category: "Data & ETL",
         icon: React.createElement(FaChartBar),
-        skills: ["PySpark", "EMR", "Hadoop", "Hive", "SQL", "Airflow"],
+        skills: ["PySpark", "EMR", "Delta Lake", "Parquet", "Hive", "Glue", "Athena", "Hadoop", "SQL", "Airflow"],
     },
     {
         category: "Cloud & DevOps",
         icon: React.createElement(FaCloud),
-        skills: ["AWS", "GCP", "Docker", "Kubernetes", "Jenkins", "Github Actions", "ArgoCD", "Terraform"],
+        skills: ["AWS", "GCP", "Docker", "Kubernetes", "Jenkins", "Github Actions", "ArgoCD", "Terraform", "OpenTelemetry", "Splunk"],
     },
     {
         category: "GenAI & LLMs",
         icon: React.createElement(FaBrain),
-        skills: ["LangChain", "LangGraph", "RAG", "Vector DBs", "Embeddings"],
+        skills: ["LangGraph", "LangChain", "Multi-Agent Systems", "MCP", "Claude Code Plugins", "RAG", "GraphRAG", "Vector DBs", "Embeddings", "LLM Evaluation", "Langfuse"],
     },
     {
         category: "ML/DL",
         icon: React.createElement(FaBrain),
-        skills: ["PyTorch", "TensorFlow", "Keras", "Scikit-Learn"],
+        skills: ["PyTorch", "TensorFlow", "Keras", "Scikit-Learn", "sentence-transformers", "UMAP", "HDBSCAN", "Kubeflow"],
     },
     {
         category: "Frontend",
@@ -227,12 +230,12 @@ export const skillsData: readonly SkillCategory[] = [
     {
         category: "Databases",
         icon: React.createElement(FaDatabase),
-        skills: ["PostgreSQL", "MongoDB", "SQLite", "GraphQL", "Apollo"],
+        skills: ["PostgreSQL", "MySQL", "DynamoDB", "Snowflake", "MongoDB", "Redis", "SQLite", "GraphQL", "Apollo"],
     },
     {
         category: "Languages",
         icon: React.createElement(FaCode),
-        skills: ["Python", "Java", "C++", "C", "Bash"],
+        skills: ["Python", "Java", "TypeScript", "SQL", "C++", "C", "Bash"],
     },
     {
         category: "Tools & Utilities",
