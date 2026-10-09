@@ -47,7 +47,7 @@ export const experiencesData = [
             "Building a LangGraph multi-agent Legal Intelligence Platform with Langfuse tracing",
             "Built Claude plugins (skills, MCP, hooks) that cut privacy reviews from 14 days to 1 and deflect 50% of queries",
             "Led the AI Complaint Management Platform: 100GB/day PySpark pipelines with LLM + RAG regulatory checks",
-            "Designed multi-region Spring Boot microservices at 99.99% availability",
+            "Built multi-region Spring Boot microservices at 99.99% availability",
         ],
         logoPath: "/logos/Intuit.svg",
         tags: ["LANGGRAPH", "MCP", "RAG", "LLM EVALS", "PYSPARK", "SPRING BOOT", "KAFKA"],
